@@ -1,8 +1,18 @@
 [env]
-AWS_ENDPOINT_URL = "http://localhost.floci.io:4566"
+# AWS Settings  
+AWS_ENDPOINT_URL = "http://localhost:4566"
+AWS_DEFAULT_REGION = "eu-north-1"
 AWS_ACCESS_KEY_ID = "test"
 AWS_SECRET_ACCESS_KEY = "test"
-AWS_DEFAULT_REGION = "eu-north-1"
+
+# Environment Variables for `mise run local-aws`
+FLOCI_BASE_URL = "http://localhost.floci.io:4566"
+FLOCI_DEFAULT_REGION = "eu-north-1"
+FLOCI_DEFAULT_AVAILABILITY_ZONE = "eu-north-1a"
+
+# This is where floci will save the state of your local AWS infastructure
+LOCAL_AWS_DATA_DIR = "{{env.HOME}}/.floci-aws-data"
+
 #______________________________________________________________________________
 
 [tools]
@@ -15,8 +25,8 @@ terraform = "latest"
 aws-cli = { version = "latest", symlink_bins = "true" }
 #______________________________________________________________________________
 
-[tasks.structure]
-description = "🌲 View the project structure | alias = structure"
+[tasks.project-structure]
+description = "🌲 View the project structure | alias = project-structure"
 quiet = true
 run = """
 
@@ -26,6 +36,7 @@ eza --tree --git-ignore
 #______________________________________________________________________________
 
 [shell_alias]
-structure = "mise run structure"
+project-structure = "mise run project-structure"
 docker-toggle = "mise run docker-toggle"
+local-aws = "mise run local-aws"
 #______________________________________________________________________________
