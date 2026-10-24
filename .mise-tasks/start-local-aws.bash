@@ -15,6 +15,7 @@ docker run -d --name floci \
   -e FLOCI_STORAGE_PERSISTENT_PATH=/app/data \
   -v "$LOCAL_AWS_DATA_DIR":/app/data \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  floci/floci:latest
+  floci/floci:latest > /dev/null
 
+printf "\nFloci UI Link:"
 printf "\nhttp://localhost.floci.io:4566/_floci/ui\n\n"
