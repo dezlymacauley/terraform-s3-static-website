@@ -93,3 +93,27 @@ Create the infastructure
 terraform apply -auto-approve
 ```
 _______________________________________________________________________________
+
+To view the name of the `s3 bucket` run this command
+
+```bash
+aws s3 ls
+```
+
+You'll get an output like this
+```
+2026-10-24 17:20:57 terraform-s3-static-website-static-website-s3-bucket-8b916f8c
+```
+_______________________________________________________________________________
+
+To view the home page (`index.html`), open this in the browser
+```bash
+http://s3.localhost.localstack.cloud:4566/terraform-s3-static-website-static-website-s3-bucket-8b916f8c/index.html
+```
+_______________________________________________________________________________
+
+To view the error page (`error.html`), open this in the browser
+```bash
+http://s3.localhost.localstack.cloud:4566/terraform-s3-static-website-static-website-s3-bucket-8b916f8c/error.html
+```
+_______________________________________________________________________________

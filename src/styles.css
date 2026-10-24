@@ -1,0 +1,155 @@
+/* ==========================================
+   Luxury Modern Theme: Black, Gold & Purple
+   ========================================== */
+
+:root {
+  /* Color Palette */
+  --bg-primary: #0a0812;          /* Deep obsidian black with slight purple undertone */
+  --bg-secondary: #141124;        /* Rich dark card background */
+  --bg-tertiary: #1e1936;         /* Subtle hover & container shade */
+  
+  --text-primary: #f5f3ff;        /* Crisp off-white */
+  --text-muted: #a7a1c4;          /* Soft muted lavender-gray */
+  
+  --purple-accent: #7c3aed;      /* Deep vibrant purple */
+  --purple-glow: rgba(124, 58, 237, 0.25);
+  
+  --gold-primary: #d4af37;       /* Metallic classic gold */
+  --gold-accent: #f3e5ab;        /* Soft highlight gold */
+  --gold-gradient: linear-gradient(135deg, #fef08a 0%, #d4af37 50%, #854d0e 100%);
+  --gold-glow: rgba(212, 175, 55, 0.2);
+
+  --border-gold: rgba(212, 175, 55, 0.25);
+  --border-purple: rgba(124, 58, 237, 0.2);
+
+  /* Typography */
+  --font-heading: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Layout & Spacing */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Base Resets */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(124, 58, 237, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(212, 175, 55, 0.08) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+/* Typography Helpers */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.gold-text {
+  background: var(--gold-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* Container & Cards */
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.6),
+    0 0 30px var(--purple-glow);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--gold-gradient);
+}
+
+/* Buttons & Interactive Elements */
+.btn-primary {
+  background: linear-gradient(135deg, var(--purple-accent), #4c1d95);
+  color: var(--text-primary);
+  border: 1px solid var(--gold-primary);
+  padding: 0.85rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 15px var(--purple-glow);
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 6px 20px var(--purple-glow),
+    0 0 15px var(--gold-glow);
+  border-color: var(--gold-accent);
+}
+
+/* Links & Accents */
+a {
+  color: var(--gold-primary);
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+a:hover {
+  color: var(--gold-accent);
+  text-shadow: 0 0 8px var(--gold-glow);
+}
+
+/* Error Page Variant (Optional class for error.html) */
+.card.error-card {
+  border-color: var(--border-purple);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.7),
+    0 0 30px rgba(124, 58, 237, 0.3);
+}

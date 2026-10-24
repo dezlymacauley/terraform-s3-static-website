@@ -82,3 +82,12 @@ resource "aws_s3_object" "error_html" {
     content_type = "text/html"
     etag         = filemd5("${path.module}/../src/error.html")
 }
+
+// Upload the website's stylesheet.
+resource "aws_s3_object" "styles_css" {
+    bucket       = aws_s3_bucket.static_website_s3_bucket.id
+    key          = "styles.css"
+    source       = "${path.module}/../src/styles.css"
+    content_type = "text/css"
+    etag         = filemd5("${path.module}/../src/styles.css")
+}
