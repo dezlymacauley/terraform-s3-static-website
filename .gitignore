@@ -1,2 +1,5 @@
 # Terraform Initialization
 terraform/.terraform/
+
+# Terraform State
+*.tfstate*

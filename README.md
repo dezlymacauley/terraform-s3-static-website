@@ -1,12 +1,24 @@
 # Terraform S3 Static Website
 _______________________________________________________________________________
 
+## Technologies used in this project
+1. mise
+2. Bash Scripting
+3. Docker
+4. Floci
+5. eza
+
+6. Terraform 
+7. AWS
+    - S3
+_______________________________________________________________________________
+
 ## Requirements:
 - mise
 - systemctl
 - docker
 
-Everything else required to run this project is in the `mise.toml` file
+Everything else required to run this project will be installed by `mise`
 _______________________________________________________________________________
 
 ## Mise Usage Guide
