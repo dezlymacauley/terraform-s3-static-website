@@ -81,3 +81,15 @@ terraform init
 - This command will take some time because it needs to download 
 the providers for this project. Think of providers as plugins for Terraform.
 _______________________________________________________________________________
+
+Check that this structure can be created
+```bash
+terraform plan
+```
+_______________________________________________________________________________
+
+Create the infastructure 
+```bash
+terraform apply -auto-approve
+```
+_______________________________________________________________________________
