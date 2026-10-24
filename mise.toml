@@ -1,7 +1,23 @@
-[env]
-AWS_DEFAULT_REGION="eu-north-1"
-
 [tools]
+eza = "latest"
+
 terraform = "latest"
 "github:hashicorp/terraform-ls" = "latest"
+
 "github:floci-io/floci-cli" = "latest"
+
+#______________________________________________________________________________
+
+[tasks.structure]
+description = "🌲 View the project structure"
+quiet = true
+run = """
+
+eza --tree --git-ignore
+
+"""
+#______________________________________________________________________________
+
+[shell_alias]
+structure = "mise run structure"
+#______________________________________________________________________________
