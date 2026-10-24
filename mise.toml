@@ -12,7 +12,7 @@ terraform = "latest"
 #______________________________________________________________________________
 
 [tasks.structure]
-description = "🌲 View the project structure"
+description = "🌲 View the project structure | alias = structure"
 quiet = true
 run = """
 
@@ -23,4 +23,5 @@ eza --tree --git-ignore
 
 [shell_alias]
 structure = "mise run structure"
+docker-toggle = "mise run docker-toggle"
 #______________________________________________________________________________

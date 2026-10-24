@@ -3,10 +3,13 @@ _______________________________________________________________________________
 
 ## Requirements:
 - mise
+- systemctl
 - docker
 
 Everything else required to run this project is in the `mise.toml` file
 _______________________________________________________________________________
+
+## Mise Usage Guide
 
 Ensure that the bash scripts in the `.mise-tasks` directory are executable.
 ```bash
@@ -20,14 +23,15 @@ mise trust
 ```
 _______________________________________________________________________________
 
-Ensure that you have Docker running
+## Docker Usage Guide
+
+Activate the Docker daemon
 ```bash
-floci aws doctor 
+docker-toggle
 ```
 _______________________________________________________________________________
 
-
-_______________________________________________________________________________
+## Floci Usage Guide
 
 Check the status of the Floci AWS emulator
 ```bash
@@ -41,13 +45,27 @@ floci aws start
 ```
 _______________________________________________________________________________
 
-```bash
-eval $(floci env)
-```
-_______________________________________________________________________________
-
 Stop Floci (AWS emulator)
 ```bash
 floci stop 
 ```
+_______________________________________________________________________________
+
+## Terraform Usage Guide
+_______________________________________________________________________________
+
+Enter the `terraform` directory
+```bash
+cd terraform
+```
+_______________________________________________________________________________
+
+Initialize terraform
+```bash
+terraform init
+```
+
+#### Note:
+- This command will take some time because it needs to download 
+the providers for this project. Think of providers as plugins for Terraform.
 _______________________________________________________________________________
