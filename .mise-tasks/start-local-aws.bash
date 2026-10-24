@@ -2,7 +2,7 @@
 #MISE description="🍿 Start Floci (Local AWS Emulator)"
 #MISE quiet=true
 
-mkdir -p "$FLOCI_DATA_DIR"
+mkdir -p "$LOCAL_AWS_DATA_DIR"
 docker rm -f floci >/dev/null 2>&1
 
 docker run -d --name floci \

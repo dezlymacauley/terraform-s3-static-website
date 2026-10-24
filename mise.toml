@@ -25,7 +25,7 @@ terraform = "latest"
 aws-cli = { version = "latest", symlink_bins = "true" }
 #______________________________________________________________________________
 
-[tasks.project-structure]
+[tasks.view-structure]
 description = "🌲 View the project structure | alias = project-structure"
 quiet = true
 run = """
@@ -36,7 +36,8 @@ eza --tree --git-ignore
 #______________________________________________________________________________
 
 [shell_alias]
-project-structure = "mise run project-structure"
-docker-toggle = "mise run docker-toggle"
-local-aws = "mise run local-aws"
+view-structure = "mise run view-structure"
+toggle-docker = "mise run toggle-docker"
+start-local-aws = "mise run start-local-aws"
+stop-local-aws = "floci stop"
 #______________________________________________________________________________

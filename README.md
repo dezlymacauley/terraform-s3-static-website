@@ -35,7 +35,8 @@ mise trust
 ```
 _______________________________________________________________________________
 
-## Docker Usage Guide
+## Usage Guide
+_______________________________________________________________________________
 
 Activate the Docker daemon
 ```bash
@@ -43,21 +44,13 @@ docker-toggle
 ```
 _______________________________________________________________________________
 
-## Floci Usage Guide
-
-Check the status of the Floci AWS emulator
+Start the Local AWS emulator
 ```bash
-floci aws status
+local-aws-start
 ```
 _______________________________________________________________________________
 
-Start Floci AWS emulator
-```bash
-floci aws start
-```
-_______________________________________________________________________________
-
-Stop Floci (AWS emulator)
+Stop the Local AWS emulator
 ```bash
 floci stop 
 ```
