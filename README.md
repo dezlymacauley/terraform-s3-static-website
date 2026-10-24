@@ -1,3 +1,5 @@
+# Terraform S3 Static Website
+_______________________________________________________________________________
 
 
 _______________________________________________________________________________
@@ -16,7 +18,7 @@ _______________________________________________________________________________
 
 ## Requirements:
 - mise
-- systemctl
+- systemctl (Available on many Linux Distros)
 - docker
 
 Everything else required to run this project will be installed by `mise`
@@ -115,5 +117,27 @@ _______________________________________________________________________________
 To view the error page (`error.html`), open this in the browser
 ```bash
 http://s3.localhost.localstack.cloud:4566/terraform-s3-static-website-static-website-s3-bucket-8b916f8c/error.html
+```
+_______________________________________________________________________________
+
+## Cleanup / Shutdown
+
+_______________________________________________________________________________
+
+Destroy the infastructure
+```bash
+terraform destroy -auto-approve 
+```
+_______________________________________________________________________________
+
+Shutdown the AWS emulator
+```bash
+stop local-aws
+```
+_______________________________________________________________________________
+
+Shutdown Docker
+```bash
+toggle-docker
 ```
 _______________________________________________________________________________
