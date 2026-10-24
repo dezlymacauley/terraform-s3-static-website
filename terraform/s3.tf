@@ -50,3 +50,35 @@ resource "aws_s3_bucket_policy" "s3_bucket_read_only_policy" {
     ]
   })
 }
+
+resource "aws_s3_bucket_website_configuration" "static_website" {
+
+  bucket = aws_s3_bucket.static_website_s3_bucket.id
+
+  index_document {
+    suffix = "index.html"
+  }
+
+  error_document {
+    key = "error.html"
+  }
+
+}
+
+// Upload the website's index page.
+resource "aws_s3_object" "index_html" {
+    bucket       = aws_s3_bucket.static_website_s3_bucket.id
+    key          = "index.html"
+    source       = "${path.module}/../src/index.html"
+    content_type = "text/html"
+    etag         = filemd5("${path.module}/../src/index.html")
+}
+
+// Upload the website's error page.
+resource "aws_s3_object" "error_html" {
+    bucket       = aws_s3_bucket.static_website_s3_bucket.id
+    key          = "error.html"
+    source       = "${path.module}/../src/error.html"
+    content_type = "text/html"
+    etag         = filemd5("${path.module}/../src/error.html")
+}
